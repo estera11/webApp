@@ -5,30 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Web App</title>
+<h3>Online food store catalogue<h3>
 </head>
 <body>
-    <form action= "http://localhost:8080/resteasy/restful-services/sampleservice/hello" method="GET">
-        
-        
-        <input type="submit" value="Hello World Test">
-    </form>
-	
-	  <form action= "http://localhost:8080/resteasy/restful-services/sampleservice/echo/message" method="GET">
-        
-        <input type="submit" value="Print Message ">
-    </form>
+<form action="http://localhost:8080/WebAppAssignment/web/" method ="post">
+<div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
 
-	<form action= "http://localhost:8080/resteasy/restful-services/sampleservice/employees" method="GET">  
-        <input type="submit" value="View All Employees">
-    </form>
-	
-	<form action= "http://localhost:8080/resteasy/restful-services/sampleservice/json/employees" method="GET">  
-        <input type="submit" value="View JSON All Employee ">
-    </form>
-	
-	<form action= "http://localhost:8080/resteasy/restful-services/sampleservice/json/employee/1" method="GET">  
-        <input type="submit" value="View JSON Employee 1">
-    </form>
-	
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+</div>
+</form>
 </body>
 </html>
