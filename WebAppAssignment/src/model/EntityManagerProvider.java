@@ -1,3 +1,4 @@
+package model;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -5,13 +6,18 @@ public class EntityManagerProvider {
 	
     public static final boolean DEBUG = true;
     
-    private static final EntityManagerProvider entityManagerInstance = new EntityManagerProvider();
+    private static final EntityManagerProvider instance = new EntityManagerProvider();
    
     protected EntityManagerFactory entityManagerFactory;
     
+    public static EntityManagerProvider getInstance() {
+        
+        return instance;
+      }
+    
     private EntityManagerProvider () {}
     
-    public  EntityManagerFactory getInstance() {
+    public  EntityManagerFactory getEntityManagerFactory() {
     	 if(entityManagerFactory ==  null)
     		 createEntityManagerFactory();
     	 return entityManagerFactory;
