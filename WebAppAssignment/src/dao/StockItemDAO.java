@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 import model.EntityManagerProvider;
@@ -31,5 +33,10 @@ public class StockItemDAO {
 		em.persist(em.merge(item));
 		em.getTransaction().commit();
 		em.close();
+	}
+	
+	public List<StockItem> getStockItems(){
+		EntityManager em = EntityManagerProvider.getInstance().getEntityManagerFactory().createEntityManager();
+		return em.createNamedQuery("getAllStockItems").getResultList();
 	}
 }

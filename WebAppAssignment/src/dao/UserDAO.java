@@ -2,8 +2,8 @@ package dao;
 
 import javax.persistence.EntityManager;
 
+
 import model.EntityManagerProvider;
-import model.Image;
 import model.User;
 
 public class UserDAO {
@@ -31,6 +31,23 @@ public class UserDAO {
 		em.persist(em.merge(user));
 		em.getTransaction().commit();
 		em.close();
+	}
+	
+	public boolean validateUserExists(String username, String password) {
+		EntityManager em = EntityManagerProvider.getInstance().getEntityManagerFactory().createEntityManager();
+		User user = (User) em.createNamedQuery("getUser").setParameter(1, username).getSingleResult();
+		 if (user != null && user.getPassword().equals(password)) {
+             return true;
+         }else
+        	 return false;
+	}
+	public User getUser(String username, String password) {
+		EntityManager em = EntityManagerProvider.getInstance().getEntityManagerFactory().createEntityManager();
+		User user = (User) em.createNamedQuery("getUser").setParameter(1, username).getSingleResult();
+		 if (user != null && user.getPassword().equals(password)) {
+             return user;
+         }else
+        	 return null;
 	}
 
 }

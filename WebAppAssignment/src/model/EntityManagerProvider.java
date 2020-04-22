@@ -1,4 +1,5 @@
 package model;
+
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -24,7 +25,7 @@ public class EntityManagerProvider {
     }
     
     public void createEntityManagerFactory() {
-    	this.entityManagerFactory = Persistence.createEntityManagerFactory("webPersistence");
+    	this.entityManagerFactory = Persistence.createEntityManagerFactory("webP");
     	if(DEBUG) {
     	   System.out.println(" Persistence started at " + new java.util.Date());
     	}

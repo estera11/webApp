@@ -4,19 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Web App</title>
-<h3>Online food store catalogue<h3>
+	<title>Web App</title>
+		<h3>Online food store catalogue<h3>
 </head>
 <body>
-<form action="http://localhost:8080/WebAppAssignment/web/" method ="post">
-<div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
+ <div style="padding-left:50px;font-family:monospace;">Choose Registration Option
+ <br>
+        <a href="${pageContext.request.contextPath}/registerCustomer.jsp"><div style="color:saffron">Register as Customer</div></a>
+        <a href="${pageContext.request.contextPath}/registerAdmin.jsp"><div style="color:saffron">Register as Admin</div></a>
 </div>
-</form>
+<br>
+  <div style="padding-left:50px;font-family:monospace;">Log In 
+
+        <a href="${pageContext.request.contextPath}/login.jsp"><div style="color:saffron">Login</div></a>
+</div>   
+
+
 </body>
 </html>
